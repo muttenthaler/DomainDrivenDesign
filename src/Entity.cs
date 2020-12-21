@@ -4,11 +4,12 @@ using System.Collections.Generic;
 namespace Muttenthaler.DomainDrivenDesign
 {
     // TODO: is it a good idea that Entity inherits from ValueObject?
-    public abstract class Entity : ValueObject
+    public abstract class Entity<TIdentifier> : ValueObject
+    where TIdentifier : IEquatable<TIdentifier>
     {
-        public Guid Id { get; private set; }
+        public TIdentifier Id { get; private set; }
 
-        public Entity(Guid id)
+        public Entity(TIdentifier id)
         {
             Id = id;
         }
