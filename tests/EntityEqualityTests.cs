@@ -9,8 +9,8 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         public void NullIsEqualToNull()
         {
             //Given
-            Entity<Guid> x = null;
-            Entity<Guid> y = null;
+            Entity x = null;
+            Entity y = null;
 
             //When
 
@@ -24,8 +24,8 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         public void NonNullIsNotEqualToNull()
         {
             //Given
-            Entity<Guid> x = new EntityA(Guid.NewGuid());
-            Entity<Guid> y = null;
+            Entity x = new EntityA(Guid.NewGuid());
+            Entity y = null;
 
             //When
 
@@ -39,8 +39,8 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         public void NullIsNotEqualToNonNull()
         {
             //Given
-            Entity<Guid> x = null;
-            Entity<Guid> y = new EntityA(Guid.NewGuid());
+            Entity x = null;
+            Entity y = new EntityA(Guid.NewGuid());
 
             //When
 
@@ -55,8 +55,8 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         {
             //Given
             Guid id = Guid.NewGuid();
-            Entity<Guid> x = new EntityA(id);
-            Entity<Guid> y = new EntityA(id);
+            Entity x = new EntityA(id);
+            Entity y = new EntityA(id);
 
             //When
 
@@ -70,8 +70,8 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         public void SameTypeAndDifferentIdIsNotEqual()
         {
             //Given
-            Entity<Guid> x = new EntityA(Guid.NewGuid());
-            Entity<Guid> y = new EntityA(Guid.NewGuid());
+            Entity x = new EntityA(Guid.NewGuid());
+            Entity y = new EntityA(Guid.NewGuid());
 
             //When
 
@@ -86,8 +86,8 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         {
             //Given
             Guid id = Guid.NewGuid();
-            Entity<Guid> x = new EntityA(id);
-            Entity<Guid> y = new EntityB(id);
+            Entity x = new EntityA(id);
+            Entity y = new EntityB(id);
 
             //When
 
@@ -102,8 +102,8 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         {
             //Given
             Guid id = Guid.NewGuid();
-            Entity<Guid> entity1 = new EntityA(id);
-            Entity<Guid> entity2 = new EntityA(id);
+            Entity entity1 = new EntityA(id);
+            Entity entity2 = new EntityA(id);
             bool[] results = new bool[10];
 
             //When
@@ -120,7 +120,7 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         public void EqualsIsReflexive()
         {
             //Given
-            Entity<Guid> x = new EntityA(Guid.NewGuid());
+            Entity x = new EntityA(Guid.NewGuid());
 
             //When
 
@@ -133,8 +133,8 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         {
             //Given
             Guid id = Guid.NewGuid();
-            Entity<Guid> x = new EntityA(id);
-            Entity<Guid> y = new EntityA(id);
+            Entity x = new EntityA(id);
+            Entity y = new EntityA(id);
 
             //When
 
@@ -147,9 +147,9 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         {
             //Given
             Guid id = Guid.NewGuid();
-            Entity<Guid> x = new EntityA(id);
-            Entity<Guid> y = new EntityA(id);
-            Entity<Guid> z = new EntityA(id);
+            Entity x = new EntityA(id);
+            Entity y = new EntityA(id);
+            Entity z = new EntityA(id);
 
             //When
 
@@ -161,7 +161,7 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         }
     }
 
-    internal class EntityA : Entity<Guid>
+    internal class EntityA : Entity
     {
         public EntityA(Guid id)
         : base(id)
@@ -169,7 +169,7 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
         }
     }
 
-    internal class EntityB : Entity<Guid>
+    internal class EntityB : Entity
     {
         public EntityB(Guid id)
         : base(id)

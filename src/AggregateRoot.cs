@@ -2,10 +2,9 @@ using System;
 
 namespace Muttenthaler.DomainDrivenDesign
 {
-    public abstract class AggregateRoot<TIdentifier> : Entity<TIdentifier>
-    where TIdentifier : IEquatable<TIdentifier>
+    public abstract class AggregateRoot : Entity
     {
-        public AggregateRoot(TIdentifier id)
+        public AggregateRoot(Guid id)
         : base(id)
         {
         }
