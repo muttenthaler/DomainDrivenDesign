@@ -163,14 +163,16 @@ namespace Muttenthaler.DomainDrivenDesign.Tests
 
     internal class EntityA : Entity<Guid>
     {
-        public EntityA(Guid id) : base(id)
+        public EntityA(Guid id)
+        : base(id)
         {
         }
     }
 
     internal class EntityB : Entity<Guid>
     {
-        public EntityB(Guid id) : base(id)
+        public EntityB(Guid id)
+        : base(id)
         {
         }
     }
