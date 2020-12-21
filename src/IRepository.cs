@@ -3,12 +3,11 @@ using System;
 namespace Muttenthaler.DomainDrivenDesign
 {
     // TODO: method "SaveChanges" here?
-    public interface IRepository<TAggregateRoot, TIdentifier>
-    where TAggregateRoot : AggregateRoot<TIdentifier>
-    where TIdentifier : IEquatable<TIdentifier>
+    public interface IRepository<TAggregateRoot>
+    where TAggregateRoot : AggregateRoot
     {
         void Add(TAggregateRoot aggregateRoot);
         void Remove(TAggregateRoot aggregateRoot);
-        TAggregateRoot GetById(TIdentifier id);
+        TAggregateRoot GetById(Guid id);
     }
 }
